@@ -1,0 +1,23 @@
+<h1>Sequence Results</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>full</th>
+      <th>dna</th>
+      <th>mrna</th>
+      <th colspan="4"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @users.each do |user| %>
+      <tr>
+        <td><%= user.full %></td>
+        <td><%= user.dna %></td>
+        <td><%= user.mrna %></td>
+       </tr>
+    <% end %>
+  </tbody>
+</table>
+

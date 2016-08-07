@@ -1,0 +1,91 @@
+<% provide(:title, 'Home') %>
+<div class="center hero-unit">
+<h1>Welcome to the CodonCoder Application</h1>
+  <%= link_to "Translate mRNA Now!", new_user_path,
+class: "btn btn-large btn-primary" %>
+  
+  <p> </p>
+</div>
+
+<html lang="en">
+  
+<head>
+  <style>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    
+     div.padded {  
+      padding-top: 10px;  
+      padding-right: 0px;  
+      padding-bottom: 0.25in;  
+      padding-left: 5em;  
+    }  
+    
+    </style>
+</head>
+   
+  
+  <body>
+    <div class = "center">
+    <strong>Click on the button and input a sequence to begin converting your amino acids to codons.</strong>
+      </div>
+    <div class="padded">  
+   <br>  
+   <br>
+   <br>  
+   <br> 
+   <br>  
+   <br>    
+      
+      </div>
+    </body>
+  
+ 
+<body>
+  
+<p class = "padding">
+  
+<div class="container-fluid">
+   
+  <div class = "pull-left">
+    
+    <h3>Additional sequencing resources</h3>
+  <p>The following pages can be used to BLAST protein sequences or display nucleotide sequences in a uesful graphic .</p>
+    
+    </div>
+  </div>
+  <div class="container">
+  <div class="well well-lg" style="margin:10px">
+  <div class="row">
+  <div class="row">
+    <div class="col-md-5 pull-left" style="background-color:lightgrey;">
+      <div class="hidden-lg hidden-md hidden-sm">&nbsp;</div>
+        <p>Please click on the image to do Nucleotide BLAST search using NCBI website.</p>
+            <div class = "center">
+            <%= link_to image_tag("NCBI.jpg", alt: "Rails logo", height:"142", width:"300"),'http://blast.ncbi.nlm.nih.gov/Blast.cgi?        
+                PROGRAM=blastn&PAGE_TYPE=BlastSearch&LINK_LOC=blasthome' %>
+              </div>
+         <br>
+      <p></p>
+        </div>
+      <div class="col-md-5 pull-right" style="background-color:lightgrey;">
+        <p>Please click on the image to do sequence nucleotides and display in a graphic.</p>
+        <div class = "center">
+          <%= link_to image_tag("atlas_plasmid.jpg", alt: "Rails logo", height:"142", width:"300"),'https://www.dna20.com/eCommerce/tools/atlas-
+            plasmid-mapper' %>  
+          </div>
+         <br>
+      <p></p>
+    </div>
+  </div>
+</div>
+      </div>
+     </div>
+  </p>
+    
+</body>
+</html>

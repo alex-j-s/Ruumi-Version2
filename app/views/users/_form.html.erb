@@ -1,0 +1,23 @@
+<body>
+    <div class="content-container-1" id="div3">
+       <div class="container">
+          <div class="row text-center">
+            <h3>Add your sequence here</h3>
+
+          </div>
+
+           <div class="row text-center pt mb">
+             <div class="col-md-6 col-md-offset-3">
+                <br>
+
+              <%= form_tag(users_path, :method => "get", id: "search-form") do %>
+              <%= text_area_tag :search, params[:search], placeholder: "Translate DNA codons...", 
+              :size =>"75x10", class: "form-control"%> 
+               <br>
+              <%= submit_tag "Search", :name => nil, :mrna => nil %>
+              <% end %> 
+
+            </div>
+        </div>
+    </div>
+</div>
