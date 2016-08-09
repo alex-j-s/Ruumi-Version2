@@ -1,0 +1,19 @@
+current directory: /home/nitrous/code/Ruumi-Version2/.bundle/gems/byebug-9.0.5/ext/byebug
+/usr/local/opt/rbenv/versions/2.3.1/bin/ruby -r ./siteconf20160807-18165-p8qm83.rb extconf.rb
+creating Makefile
+
+current directory: /home/nitrous/code/Ruumi-Version2/.bundle/gems/byebug-9.0.5/ext/byebug
+make "DESTDIR=" clean
+
+current directory: /home/nitrous/code/Ruumi-Version2/.bundle/gems/byebug-9.0.5/ext/byebug
+make "DESTDIR="
+compiling locker.c
+compiling context.c
+compiling threads.c
+compiling breakpoint.c
+compiling byebug.c
+linking shared-object byebug/byebug.so
+
+current directory: /home/nitrous/code/Ruumi-Version2/.bundle/gems/byebug-9.0.5/ext/byebug
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 byebug.so ./.gem.20160807-18165-1efbbx1/byebug

@@ -1,0 +1,981 @@
+
+
+Started GET "/" for 50.17.182.190 at 2016-08-07 18:24:24 +0000
+Cannot render console from 50.17.182.190! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+	bin/rake db:migrate RAILS_ENV=development
+
+):
+  .bundleactiverecord (4.2.6) lib/active_record/migration.rb:392:in `check_pending!'
+  .bundleactiverecord (4.2.6) lib/active_record/migration.rb:373:in `call'
+  .bundleactionpack (4.2.6) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  .bundleactivesupport (4.2.6) lib/active_support/callbacks.rb:88:in `__run_callbacks__'
+  .bundleactivesupport (4.2.6) lib/active_support/callbacks.rb:778:in `_run_call_callbacks'
+  .bundleactivesupport (4.2.6) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  .bundleactionpack (4.2.6) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  .bundleactionpack (4.2.6) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  .bundleactionpack (4.2.6) lib/action_dispatch/middleware/remote_ip.rb:78:in `call'
+  .bundleactionpack (4.2.6) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  .bundleweb-console (2.3.0) lib/web_console/middleware.rb:20:in `block in call'
+  .bundleweb-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  .bundleweb-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  .bundleactionpack (4.2.6) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  .bundlerailties (4.2.6) lib/rails/rack/logger.rb:38:in `call_app'
+  .bundlerailties (4.2.6) lib/rails/rack/logger.rb:20:in `block in call'
+  .bundleactivesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  .bundleactivesupport (4.2.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+  .bundleactivesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `tagged'
+  .bundlerailties (4.2.6) lib/rails/rack/logger.rb:20:in `call'
+  .bundleactionpack (4.2.6) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  .bundlerack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  .bundlerack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  .bundleactivesupport (4.2.6) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  .bundlerack (1.6.4) lib/rack/lock.rb:17:in `call'
+  .bundleactionpack (4.2.6) lib/action_dispatch/middleware/static.rb:120:in `call'
+  .bundlerack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  .bundlerailties (4.2.6) lib/rails/engine.rb:518:in `call'
+  .bundlerailties (4.2.6) lib/rails/application.rb:165:in `call'
+  .bundlerack (1.6.4) lib/rack/lock.rb:17:in `call'
+  .bundlerack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  .bundlerack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /usr/local/opt/rbenv/versions/2.3.1/lib/ruby/2.3.0/webrick/httpserver.rb:140:in `service'
+  /usr/local/opt/rbenv/versions/2.3.1/lib/ruby/2.3.0/webrick/httpserver.rb:96:in `run'
+  /usr/local/opt/rbenv/versions/2.3.1/lib/ruby/2.3.0/webrick/server.rb:296:in `block in start_thread'
+
+
+  Rendered .bundle/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (2.3ms)
+  Rendered .bundle/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.5ms)
+  Rendered .bundle/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered .bundle/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (29.4ms)
+  [1m[36m (9.5ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (6.3ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to CreateUsers (20140929191900)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+DEPRECATION WARNING: `#timestamps` was called without specifying an option for `null`. In Rails 5, this behavior will change to `null: false`. You should manually specify `null: true` to prevent the behavior of your existing migrations from changing. (called from block in change at /home/nitrous/code/Ruumi-Version2/db/migrate/20140929191900_create_users.rb:7)
+  [1m[35m (0.4ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "email" varchar, "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20140929191900"]]
+  [1m[35m (8.2ms)[0m  commit transaction
+Migrating to ChangeNames (20150501001725)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (1.9ms)[0m  CREATE TEMPORARY TABLE "ausers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "full" varchar, "email" varchar, "created_at" datetime, "updated_at" datetime) 
+  [1m[36m (0.1ms)[0m  [1mSELECT * FROM "users"[0m
+  [1m[35m (0.3ms)[0m  DROP TABLE "users"
+  [1m[36m (0.2ms)[0m  [1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "full" varchar, "email" varchar, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35m (0.1ms)[0m  SELECT * FROM "ausers"
+  [1m[36m (0.2ms)[0m  [1mDROP TABLE "ausers"[0m
+  [1m[35m (0.3ms)[0m  CREATE TEMPORARY TABLE "ausers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "full" varchar, "dna" varchar, "created_at" datetime, "updated_at" datetime) 
+  [1m[36m (0.1ms)[0m  [1mSELECT * FROM "users"[0m
+  [1m[35m (0.2ms)[0m  DROP TABLE "users"
+  [1m[36m (0.1ms)[0m  [1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "full" varchar, "dna" varchar, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35m (0.1ms)[0m  SELECT * FROM "ausers"
+  [1m[36m (0.2ms)[0m  [1mDROP TABLE "ausers"[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20150501001725"]]
+  [1m[36m (9.0ms)[0m  [1mcommit transaction[0m
+Migrating to AddMrnaColumnToUsers (20150501003248)
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.4ms)[0m  [1mALTER TABLE "users" ADD "mrna" varchar[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20150501003248"]]
+  [1m[36m (6.5ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+
+
+Started GET "/" for 50.17.182.190 at 2016-08-07 18:25:02 +0000
+Cannot render console from 50.17.182.190! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by StaticPagesController#home as HTML
+  Rendered static_pages/home.html.erb within layouts/application (577.9ms)
+Completed 500 Internal Server Error in 610ms (ActiveRecord: 0.0ms)
+
+ActionView::Template::Error (File to import not found or unreadable: bootstrap.
+Load paths:
+  /home/nitrous/code/Ruumi-Version2/app/assets/images
+  /home/nitrous/code/Ruumi-Version2/app/assets/javascripts
+  /home/nitrous/code/Ruumi-Version2/app/assets/stylesheets
+  /home/nitrous/code/Ruumi-Version2/vendor/assets/javascripts
+  /home/nitrous/code/Ruumi-Version2/vendor/assets/stylesheets
+  /home/nitrous/code/Ruumi-Version2/.bundle/gems/jquery-rails-4.1.1/vendor/assets/javascripts
+  /home/nitrous/code/Ruumi-Version2/.bundle/gems/coffee-rails-4.1.1/lib/assets/javascripts
+  /home/nitrous/code/Ruumi-Version2/.bundle/gems/turbolinks-source-5.0.0/lib/assets/javascripts):
+    66:       <div class="hidden-lg hidden-md hidden-sm">&nbsp;</div>
+    67:         <p>Please click on the image to do Nucleotide BLAST search using NCBI website.</p>
+    68:             <div class = "center">
+    69:             <%= link_to image_tag("NCBI.jpg", alt: "Rails logo", height:"142", width:"300"),'http://blast.ncbi.nlm.nih.gov/Blast.cgi?        
+    70:                 PROGRAM=blastn&PAGE_TYPE=BlastSearch&LINK_LOC=blasthome' %>
+    71:               </div>
+    72:          <br>
+  app/assets/stylesheets/custom.css.scss:1
+  app/views/static_pages/home.html.erb:69:in `_app_views_static_pages_home_html_erb___619352941540926162_47369153314940'
+
+
+  Rendered .bundle/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (13.7ms)
+  Rendered .bundle/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (8.9ms)
+  Rendered .bundle/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered .bundle/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (52.3ms)
+
+
+Started GET "/home" for 50.17.182.190 at 2016-08-07 18:25:35 +0000
+Cannot render console from 50.17.182.190! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+ActionController::RoutingError (No route matches [GET] "/home"):
+  .bundleactionpack (4.2.6) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  .bundleweb-console (2.3.0) lib/web_console/middleware.rb:20:in `block in call'
+  .bundleweb-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  .bundleweb-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  .bundleactionpack (4.2.6) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  .bundlerailties (4.2.6) lib/rails/rack/logger.rb:38:in `call_app'
+  .bundlerailties (4.2.6) lib/rails/rack/logger.rb:20:in `block in call'
+  .bundleactivesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  .bundleactivesupport (4.2.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+  .bundleactivesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `tagged'
+  .bundlerailties (4.2.6) lib/rails/rack/logger.rb:20:in `call'
+  .bundleactionpack (4.2.6) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  .bundlerack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  .bundlerack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  .bundleactivesupport (4.2.6) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  .bundlerack (1.6.4) lib/rack/lock.rb:17:in `call'
+  .bundleactionpack (4.2.6) lib/action_dispatch/middleware/static.rb:120:in `call'
+  .bundlerack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  .bundlerailties (4.2.6) lib/rails/engine.rb:518:in `call'
+  .bundlerailties (4.2.6) lib/rails/application.rb:165:in `call'
+  .bundlerack (1.6.4) lib/rack/lock.rb:17:in `call'
+  .bundlerack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  .bundlerack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /usr/local/opt/rbenv/versions/2.3.1/lib/ruby/2.3.0/webrick/httpserver.rb:140:in `service'
+  /usr/local/opt/rbenv/versions/2.3.1/lib/ruby/2.3.0/webrick/httpserver.rb:96:in `run'
+  /usr/local/opt/rbenv/versions/2.3.1/lib/ruby/2.3.0/webrick/server.rb:296:in `block in start_thread'
+
+
+  Rendered .bundle/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.3ms)
+  Rendered .bundle/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.1ms)
+  Rendered .bundle/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_table.html.erb (7.2ms)
+  Rendered .bundle/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered .bundle/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (40.7ms)
+
+
+Started GET "/" for 50.17.182.190 at 2016-08-07 18:25:44 +0000
+Cannot render console from 50.17.182.190! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by StaticPagesController#home as HTML
+  Rendered static_pages/home.html.erb within layouts/application (16.4ms)
+Completed 500 Internal Server Error in 18ms (ActiveRecord: 0.0ms)
+
+ActionView::Template::Error (File to import not found or unreadable: bootstrap.
+Load paths:
+  /home/nitrous/code/Ruumi-Version2/app/assets/images
+  /home/nitrous/code/Ruumi-Version2/app/assets/javascripts
+  /home/nitrous/code/Ruumi-Version2/app/assets/stylesheets
+  /home/nitrous/code/Ruumi-Version2/vendor/assets/javascripts
+  /home/nitrous/code/Ruumi-Version2/vendor/assets/stylesheets
+  /home/nitrous/code/Ruumi-Version2/.bundle/gems/jquery-rails-4.1.1/vendor/assets/javascripts
+  /home/nitrous/code/Ruumi-Version2/.bundle/gems/coffee-rails-4.1.1/lib/assets/javascripts
+  /home/nitrous/code/Ruumi-Version2/.bundle/gems/turbolinks-source-5.0.0/lib/assets/javascripts):
+    66:       <div class="hidden-lg hidden-md hidden-sm">&nbsp;</div>
+    67:         <p>Please click on the image to do Nucleotide BLAST search using NCBI website.</p>
+    68:             <div class = "center">
+    69:             <%= link_to image_tag("NCBI.jpg", alt: "Rails logo", height:"142", width:"300"),'http://blast.ncbi.nlm.nih.gov/Blast.cgi?        
+    70:                 PROGRAM=blastn&PAGE_TYPE=BlastSearch&LINK_LOC=blasthome' %>
+    71:               </div>
+    72:          <br>
+  app/assets/stylesheets/custom.css.scss:1
+  app/views/static_pages/home.html.erb:69:in `_app_views_static_pages_home_html_erb___619352941540926162_47369153314940'
+
+
+  Rendered .bundle/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (10.8ms)
+  Rendered .bundle/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.7ms)
+  Rendered .bundle/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered .bundle/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (33.9ms)
+
+
+Started GET "/" for 50.17.182.190 at 2016-08-07 18:28:09 +0000
+Cannot render console from 50.17.182.190! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by StaticPagesController#home as HTML
+  Rendered static_pages/home.html.erb within layouts/application (3065.0ms)
+Completed 200 OK in 3177ms (Views: 3168.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/custom.self-f5db9767ad5e5c89662d2b735a5a880ebe2286a86a5ca426c4380d7acbeca0dc.css?body=1" for 50.17.182.190 at 2016-08-07 18:28:12 +0000
+Cannot render console from 50.17.182.190! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/application.self-565a90fd247bd9ef75cf5f71be1e11e37c3ad80695d8bdfb331fe844afbe0a9e.css?body=1" for 50.17.182.190 at 2016-08-07 18:28:12 +0000
+Cannot render console from 50.17.182.190! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/static_pages.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 50.17.182.190 at 2016-08-07 18:28:12 +0000
+Cannot render console from 50.17.182.190! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 50.17.182.190 at 2016-08-07 18:28:12 +0000
+Cannot render console from 50.17.182.190! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/scaffolds.self-75f27d1939a7b9d24d1add4f34d679e35e6d8dd9cbf136b11db49ba5d6e2b351.css?body=1" for 50.17.182.190 at 2016-08-07 18:28:12 +0000
+Cannot render console from 50.17.182.190! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/static_pages.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 50.17.182.190 at 2016-08-07 18:28:12 +0000
+Cannot render console from 50.17.182.190! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for 50.17.182.190 at 2016-08-07 18:28:12 +0000
+Cannot render console from 50.17.182.190! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 50.17.182.190 at 2016-08-07 18:28:12 +0000
+Cannot render console from 50.17.182.190! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for 50.17.182.190 at 2016-08-07 18:28:12 +0000
+Cannot render console from 50.17.182.190! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/application.self-85a3df08aab34bc6a22c0cf18bd349b5a3fda5edca3e6dead5e0390446173b12.js?body=1" for 50.17.182.190 at 2016-08-07 18:28:12 +0000
+Cannot render console from 50.17.182.190! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/turbolinks.self-c5acd7a204f5f25ce7a1d8a0e4d92e28d34c9e2df2c7371cd7af88e147e4ad82.js?body=1" for 50.17.182.190 at 2016-08-07 18:28:12 +0000
+Cannot render console from 50.17.182.190! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/js/bootstrap.min.js" for 50.17.182.190 at 2016-08-07 18:28:13 +0000
+Cannot render console from 50.17.182.190! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+ActionController::RoutingError (No route matches [GET] "/js/bootstrap.min.js"):
+  .bundleactionpack (4.2.6) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  .bundleweb-console (2.3.0) lib/web_console/middleware.rb:20:in `block in call'
+  .bundleweb-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  .bundleweb-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  .bundleactionpack (4.2.6) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  .bundlerailties (4.2.6) lib/rails/rack/logger.rb:38:in `call_app'
+  .bundlerailties (4.2.6) lib/rails/rack/logger.rb:20:in `block in call'
+  .bundleactivesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  .bundleactivesupport (4.2.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+  .bundleactivesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `tagged'
+  .bundlerailties (4.2.6) lib/rails/rack/logger.rb:20:in `call'
+  .bundleactionpack (4.2.6) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  .bundlerack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  .bundlerack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  .bundleactivesupport (4.2.6) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  .bundlerack (1.6.4) lib/rack/lock.rb:17:in `call'
+  .bundleactionpack (4.2.6) lib/action_dispatch/middleware/static.rb:120:in `call'
+  .bundlerack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  .bundlerailties (4.2.6) lib/rails/engine.rb:518:in `call'
+  .bundlerailties (4.2.6) lib/rails/application.rb:165:in `call'
+  .bundlerack (1.6.4) lib/rack/lock.rb:17:in `call'
+  .bundlerack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  .bundlerack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /usr/local/opt/rbenv/versions/2.3.1/lib/ruby/2.3.0/webrick/httpserver.rb:140:in `service'
+  /usr/local/opt/rbenv/versions/2.3.1/lib/ruby/2.3.0/webrick/httpserver.rb:96:in `run'
+  /usr/local/opt/rbenv/versions/2.3.1/lib/ruby/2.3.0/webrick/server.rb:296:in `block in start_thread'
+
+
+  Rendered .bundle/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.7ms)
+  Rendered .bundle/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.4ms)
+  Rendered .bundle/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_table.html.erb (8.1ms)
+  Rendered .bundle/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered .bundle/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (41.0ms)
+
+
+Started GET "/assets/NCBI-3b774797d980780ece61884eae50390b17592cf8d221e34edb64cfdfc2d7d9ca.jpg" for 50.17.182.190 at 2016-08-07 18:28:13 +0000
+Cannot render console from 50.17.182.190! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/atlas_plasmid-ce48caf4599e694c9d6affa013d1c31bdd9aac1caf23c9d0f2de78933c01a997.jpg" for 50.17.182.190 at 2016-08-07 18:28:13 +0000
+Cannot render console from 50.17.182.190! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/about" for 50.17.182.190 at 2016-08-07 18:28:31 +0000
+Cannot render console from 50.17.182.190! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by StaticPagesController#about as HTML
+  Rendered static_pages/about.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 31ms (Views: 30.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/js/bootstrap.min.js" for 50.17.182.190 at 2016-08-07 18:28:32 +0000
+Cannot render console from 50.17.182.190! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+ActionController::RoutingError (No route matches [GET] "/js/bootstrap.min.js"):
+  .bundleactionpack (4.2.6) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  .bundleweb-console (2.3.0) lib/web_console/middleware.rb:20:in `block in call'
+  .bundleweb-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  .bundleweb-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  .bundleactionpack (4.2.6) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  .bundlerailties (4.2.6) lib/rails/rack/logger.rb:38:in `call_app'
+  .bundlerailties (4.2.6) lib/rails/rack/logger.rb:20:in `block in call'
+  .bundleactivesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  .bundleactivesupport (4.2.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+  .bundleactivesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `tagged'
+  .bundlerailties (4.2.6) lib/rails/rack/logger.rb:20:in `call'
+  .bundleactionpack (4.2.6) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  .bundlerack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  .bundlerack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  .bundleactivesupport (4.2.6) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  .bundlerack (1.6.4) lib/rack/lock.rb:17:in `call'
+  .bundleactionpack (4.2.6) lib/action_dispatch/middleware/static.rb:120:in `call'
+  .bundlerack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  .bundlerailties (4.2.6) lib/rails/engine.rb:518:in `call'
+  .bundlerailties (4.2.6) lib/rails/application.rb:165:in `call'
+  .bundlerack (1.6.4) lib/rack/lock.rb:17:in `call'
+  .bundlerack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  .bundlerack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /usr/local/opt/rbenv/versions/2.3.1/lib/ruby/2.3.0/webrick/httpserver.rb:140:in `service'
+  /usr/local/opt/rbenv/versions/2.3.1/lib/ruby/2.3.0/webrick/httpserver.rb:96:in `run'
+  /usr/local/opt/rbenv/versions/2.3.1/lib/ruby/2.3.0/webrick/server.rb:296:in `block in start_thread'
+
+
+  Rendered .bundle/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.7ms)
+  Rendered .bundle/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.2ms)
+  Rendered .bundle/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.4ms)
+  Rendered .bundle/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.6ms)
+  Rendered .bundle/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (31.7ms)
+
+
+Started GET "/contact" for 50.17.182.190 at 2016-08-07 18:28:33 +0000
+Cannot render console from 50.17.182.190! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by StaticPagesController#contact as HTML
+  Rendered static_pages/contact.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 32ms (Views: 31.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/js/bootstrap.min.js" for 50.17.182.190 at 2016-08-07 18:28:33 +0000
+Cannot render console from 50.17.182.190! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+ActionController::RoutingError (No route matches [GET] "/js/bootstrap.min.js"):
+  .bundleactionpack (4.2.6) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  .bundleweb-console (2.3.0) lib/web_console/middleware.rb:20:in `block in call'
+  .bundleweb-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  .bundleweb-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  .bundleactionpack (4.2.6) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  .bundlerailties (4.2.6) lib/rails/rack/logger.rb:38:in `call_app'
+  .bundlerailties (4.2.6) lib/rails/rack/logger.rb:20:in `block in call'
+  .bundleactivesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  .bundleactivesupport (4.2.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+  .bundleactivesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `tagged'
+  .bundlerailties (4.2.6) lib/rails/rack/logger.rb:20:in `call'
+  .bundleactionpack (4.2.6) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  .bundlerack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  .bundlerack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  .bundleactivesupport (4.2.6) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  .bundlerack (1.6.4) lib/rack/lock.rb:17:in `call'
+  .bundleactionpack (4.2.6) lib/action_dispatch/middleware/static.rb:120:in `call'
+  .bundlerack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  .bundlerailties (4.2.6) lib/rails/engine.rb:518:in `call'
+  .bundlerailties (4.2.6) lib/rails/application.rb:165:in `call'
+  .bundlerack (1.6.4) lib/rack/lock.rb:17:in `call'
+  .bundlerack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  .bundlerack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /usr/local/opt/rbenv/versions/2.3.1/lib/ruby/2.3.0/webrick/httpserver.rb:140:in `service'
+  /usr/local/opt/rbenv/versions/2.3.1/lib/ruby/2.3.0/webrick/httpserver.rb:96:in `run'
+  /usr/local/opt/rbenv/versions/2.3.1/lib/ruby/2.3.0/webrick/server.rb:296:in `block in start_thread'
+
+
+  Rendered .bundle/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.6ms)
+  Rendered .bundle/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.1ms)
+  Rendered .bundle/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.0ms)
+  Rendered .bundle/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered .bundle/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (29.7ms)
+
+
+Started GET "/js/bootstrap.min.js" for 50.17.182.190 at 2016-08-07 18:28:35 +0000
+Cannot render console from 50.17.182.190! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+ActionController::RoutingError (No route matches [GET] "/js/bootstrap.min.js"):
+  .bundleactionpack (4.2.6) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  .bundleweb-console (2.3.0) lib/web_console/middleware.rb:20:in `block in call'
+  .bundleweb-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  .bundleweb-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  .bundleactionpack (4.2.6) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  .bundlerailties (4.2.6) lib/rails/rack/logger.rb:38:in `call_app'
+  .bundlerailties (4.2.6) lib/rails/rack/logger.rb:20:in `block in call'
+  .bundleactivesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  .bundleactivesupport (4.2.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+  .bundleactivesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `tagged'
+  .bundlerailties (4.2.6) lib/rails/rack/logger.rb:20:in `call'
+  .bundleactionpack (4.2.6) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  .bundlerack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  .bundlerack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  .bundleactivesupport (4.2.6) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  .bundlerack (1.6.4) lib/rack/lock.rb:17:in `call'
+  .bundleactionpack (4.2.6) lib/action_dispatch/middleware/static.rb:120:in `call'
+  .bundlerack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  .bundlerailties (4.2.6) lib/rails/engine.rb:518:in `call'
+  .bundlerailties (4.2.6) lib/rails/application.rb:165:in `call'
+  .bundlerack (1.6.4) lib/rack/lock.rb:17:in `call'
+  .bundlerack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  .bundlerack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /usr/local/opt/rbenv/versions/2.3.1/lib/ruby/2.3.0/webrick/httpserver.rb:140:in `service'
+  /usr/local/opt/rbenv/versions/2.3.1/lib/ruby/2.3.0/webrick/httpserver.rb:96:in `run'
+  /usr/local/opt/rbenv/versions/2.3.1/lib/ruby/2.3.0/webrick/server.rb:296:in `block in start_thread'
+
+
+  Rendered .bundle/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.2ms)
+  Rendered .bundle/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_route.html.erb (0.9ms)
+  Rendered .bundle/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.0ms)
+  Rendered .bundle/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered .bundle/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (42.1ms)
+
+
+Started GET "/about" for 50.17.182.190 at 2016-08-07 18:28:35 +0000
+Cannot render console from 50.17.182.190! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by StaticPagesController#about as HTML
+  Rendered static_pages/about.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 25ms (Views: 24.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/js/bootstrap.min.js" for 50.17.182.190 at 2016-08-07 18:28:35 +0000
+Cannot render console from 50.17.182.190! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+ActionController::RoutingError (No route matches [GET] "/js/bootstrap.min.js"):
+  .bundleactionpack (4.2.6) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  .bundleweb-console (2.3.0) lib/web_console/middleware.rb:20:in `block in call'
+  .bundleweb-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  .bundleweb-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  .bundleactionpack (4.2.6) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  .bundlerailties (4.2.6) lib/rails/rack/logger.rb:38:in `call_app'
+  .bundlerailties (4.2.6) lib/rails/rack/logger.rb:20:in `block in call'
+  .bundleactivesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  .bundleactivesupport (4.2.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+  .bundleactivesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `tagged'
+  .bundlerailties (4.2.6) lib/rails/rack/logger.rb:20:in `call'
+  .bundleactionpack (4.2.6) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  .bundlerack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  .bundlerack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  .bundleactivesupport (4.2.6) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  .bundlerack (1.6.4) lib/rack/lock.rb:17:in `call'
+  .bundleactionpack (4.2.6) lib/action_dispatch/middleware/static.rb:120:in `call'
+  .bundlerack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  .bundlerailties (4.2.6) lib/rails/engine.rb:518:in `call'
+  .bundlerailties (4.2.6) lib/rails/application.rb:165:in `call'
+  .bundlerack (1.6.4) lib/rack/lock.rb:17:in `call'
+  .bundlerack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  .bundlerack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /usr/local/opt/rbenv/versions/2.3.1/lib/ruby/2.3.0/webrick/httpserver.rb:140:in `service'
+  /usr/local/opt/rbenv/versions/2.3.1/lib/ruby/2.3.0/webrick/httpserver.rb:96:in `run'
+  /usr/local/opt/rbenv/versions/2.3.1/lib/ruby/2.3.0/webrick/server.rb:296:in `block in start_thread'
+
+
+  Rendered .bundle/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.5ms)
+  Rendered .bundle/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.1ms)
+  Rendered .bundle/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.4ms)
+  Rendered .bundle/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered .bundle/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (29.9ms)
+
+
+Started GET "/" for 50.17.182.190 at 2016-08-07 18:28:37 +0000
+Cannot render console from 50.17.182.190! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by StaticPagesController#home as HTML
+  Rendered static_pages/home.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 49ms (Views: 48.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/js/bootstrap.min.js" for 50.17.182.190 at 2016-08-07 18:28:37 +0000
+Cannot render console from 50.17.182.190! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+ActionController::RoutingError (No route matches [GET] "/js/bootstrap.min.js"):
+  .bundleactionpack (4.2.6) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  .bundleweb-console (2.3.0) lib/web_console/middleware.rb:20:in `block in call'
+  .bundleweb-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  .bundleweb-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  .bundleactionpack (4.2.6) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  .bundlerailties (4.2.6) lib/rails/rack/logger.rb:38:in `call_app'
+  .bundlerailties (4.2.6) lib/rails/rack/logger.rb:20:in `block in call'
+  .bundleactivesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  .bundleactivesupport (4.2.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+  .bundleactivesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `tagged'
+  .bundlerailties (4.2.6) lib/rails/rack/logger.rb:20:in `call'
+  .bundleactionpack (4.2.6) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  .bundlerack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  .bundlerack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  .bundleactivesupport (4.2.6) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  .bundlerack (1.6.4) lib/rack/lock.rb:17:in `call'
+  .bundleactionpack (4.2.6) lib/action_dispatch/middleware/static.rb:120:in `call'
+  .bundlerack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  .bundlerailties (4.2.6) lib/rails/engine.rb:518:in `call'
+  .bundlerailties (4.2.6) lib/rails/application.rb:165:in `call'
+  .bundlerack (1.6.4) lib/rack/lock.rb:17:in `call'
+  .bundlerack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  .bundlerack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /usr/local/opt/rbenv/versions/2.3.1/lib/ruby/2.3.0/webrick/httpserver.rb:140:in `service'
+  /usr/local/opt/rbenv/versions/2.3.1/lib/ruby/2.3.0/webrick/httpserver.rb:96:in `run'
+  /usr/local/opt/rbenv/versions/2.3.1/lib/ruby/2.3.0/webrick/server.rb:296:in `block in start_thread'
+
+
+  Rendered .bundle/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.3ms)
+  Rendered .bundle/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.2ms)
+  Rendered .bundle/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.4ms)
+  Rendered .bundle/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered .bundle/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (30.4ms)
+
+
+Started GET "/users/new" for 50.17.182.190 at 2016-08-07 18:28:38 +0000
+Cannot render console from 50.17.182.190! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#new as HTML
+  Rendered users/_form.html.erb (0.8ms)
+  Rendered users/new.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 51ms (Views: 37.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users/js/bootstrap.min.js" for 50.17.182.190 at 2016-08-07 18:28:38 +0000
+Cannot render console from 50.17.182.190! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+ActionController::RoutingError (No route matches [GET] "/users/js/bootstrap.min.js"):
+  .bundleactionpack (4.2.6) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  .bundleweb-console (2.3.0) lib/web_console/middleware.rb:20:in `block in call'
+  .bundleweb-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  .bundleweb-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  .bundleactionpack (4.2.6) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  .bundlerailties (4.2.6) lib/rails/rack/logger.rb:38:in `call_app'
+  .bundlerailties (4.2.6) lib/rails/rack/logger.rb:20:in `block in call'
+  .bundleactivesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  .bundleactivesupport (4.2.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+  .bundleactivesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `tagged'
+  .bundlerailties (4.2.6) lib/rails/rack/logger.rb:20:in `call'
+  .bundleactionpack (4.2.6) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  .bundlerack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  .bundlerack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  .bundleactivesupport (4.2.6) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  .bundlerack (1.6.4) lib/rack/lock.rb:17:in `call'
+  .bundleactionpack (4.2.6) lib/action_dispatch/middleware/static.rb:120:in `call'
+  .bundlerack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  .bundlerailties (4.2.6) lib/rails/engine.rb:518:in `call'
+  .bundlerailties (4.2.6) lib/rails/application.rb:165:in `call'
+  .bundlerack (1.6.4) lib/rack/lock.rb:17:in `call'
+  .bundlerack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  .bundlerack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /usr/local/opt/rbenv/versions/2.3.1/lib/ruby/2.3.0/webrick/httpserver.rb:140:in `service'
+  /usr/local/opt/rbenv/versions/2.3.1/lib/ruby/2.3.0/webrick/httpserver.rb:96:in `run'
+  /usr/local/opt/rbenv/versions/2.3.1/lib/ruby/2.3.0/webrick/server.rb:296:in `block in start_thread'
+
+
+  Rendered .bundle/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.7ms)
+  Rendered .bundle/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.4ms)
+  Rendered .bundle/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.2ms)
+  Rendered .bundle/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered .bundle/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (30.6ms)
+
+
+Started GET "/users?utf8=%E2%9C%93&search=hdfkjak" for 50.17.182.190 at 2016-08-07 18:28:43 +0000
+Cannot render console from 50.17.182.190! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#index as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"hdfkjak"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE (dna like '%hdfkjak%')  ORDER BY created_at DESC
+  Rendered users/index.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 32ms (Views: 31.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/js/bootstrap.min.js" for 50.17.182.190 at 2016-08-07 18:28:44 +0000
+Cannot render console from 50.17.182.190! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+ActionController::RoutingError (No route matches [GET] "/js/bootstrap.min.js"):
+  .bundleactionpack (4.2.6) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  .bundleweb-console (2.3.0) lib/web_console/middleware.rb:20:in `block in call'
+  .bundleweb-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  .bundleweb-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  .bundleactionpack (4.2.6) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  .bundlerailties (4.2.6) lib/rails/rack/logger.rb:38:in `call_app'
+  .bundlerailties (4.2.6) lib/rails/rack/logger.rb:20:in `block in call'
+  .bundleactivesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  .bundleactivesupport (4.2.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+  .bundleactivesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `tagged'
+  .bundlerailties (4.2.6) lib/rails/rack/logger.rb:20:in `call'
+  .bundleactionpack (4.2.6) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  .bundlerack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  .bundlerack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  .bundleactivesupport (4.2.6) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  .bundlerack (1.6.4) lib/rack/lock.rb:17:in `call'
+  .bundleactionpack (4.2.6) lib/action_dispatch/middleware/static.rb:120:in `call'
+  .bundlerack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  .bundlerailties (4.2.6) lib/rails/engine.rb:518:in `call'
+  .bundlerailties (4.2.6) lib/rails/application.rb:165:in `call'
+  .bundlerack (1.6.4) lib/rack/lock.rb:17:in `call'
+  .bundlerack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  .bundlerack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /usr/local/opt/rbenv/versions/2.3.1/lib/ruby/2.3.0/webrick/httpserver.rb:140:in `service'
+  /usr/local/opt/rbenv/versions/2.3.1/lib/ruby/2.3.0/webrick/httpserver.rb:96:in `run'
+  /usr/local/opt/rbenv/versions/2.3.1/lib/ruby/2.3.0/webrick/server.rb:296:in `block in start_thread'
+
+
+  Rendered .bundle/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.3ms)
+  Rendered .bundle/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.2ms)
+  Rendered .bundle/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.1ms)
+  Rendered .bundle/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered .bundle/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (29.6ms)
+
+
+Started GET "/about" for 50.17.182.190 at 2016-08-07 18:28:46 +0000
+Cannot render console from 50.17.182.190! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by StaticPagesController#about as HTML
+  Rendered static_pages/about.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 27ms (Views: 26.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/js/bootstrap.min.js" for 50.17.182.190 at 2016-08-07 18:28:46 +0000
+Cannot render console from 50.17.182.190! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+ActionController::RoutingError (No route matches [GET] "/js/bootstrap.min.js"):
+  .bundleactionpack (4.2.6) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  .bundleweb-console (2.3.0) lib/web_console/middleware.rb:20:in `block in call'
+  .bundleweb-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  .bundleweb-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  .bundleactionpack (4.2.6) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  .bundlerailties (4.2.6) lib/rails/rack/logger.rb:38:in `call_app'
+  .bundlerailties (4.2.6) lib/rails/rack/logger.rb:20:in `block in call'
+  .bundleactivesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  .bundleactivesupport (4.2.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+  .bundleactivesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `tagged'
+  .bundlerailties (4.2.6) lib/rails/rack/logger.rb:20:in `call'
+  .bundleactionpack (4.2.6) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  .bundlerack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  .bundlerack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  .bundleactivesupport (4.2.6) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  .bundlerack (1.6.4) lib/rack/lock.rb:17:in `call'
+  .bundleactionpack (4.2.6) lib/action_dispatch/middleware/static.rb:120:in `call'
+  .bundlerack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  .bundlerailties (4.2.6) lib/rails/engine.rb:518:in `call'
+  .bundlerailties (4.2.6) lib/rails/application.rb:165:in `call'
+  .bundlerack (1.6.4) lib/rack/lock.rb:17:in `call'
+  .bundlerack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  .bundlerack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /usr/local/opt/rbenv/versions/2.3.1/lib/ruby/2.3.0/webrick/httpserver.rb:140:in `service'
+  /usr/local/opt/rbenv/versions/2.3.1/lib/ruby/2.3.0/webrick/httpserver.rb:96:in `run'
+  /usr/local/opt/rbenv/versions/2.3.1/lib/ruby/2.3.0/webrick/server.rb:296:in `block in start_thread'
+
+
+  Rendered .bundle/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.7ms)
+  Rendered .bundle/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.2ms)
+  Rendered .bundle/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.4ms)
+  Rendered .bundle/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered .bundle/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (30.4ms)
+
+
+Started GET "/" for 50.17.182.190 at 2016-08-07 18:28:48 +0000
+Cannot render console from 50.17.182.190! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by StaticPagesController#home as HTML
+  Rendered static_pages/home.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 29ms (Views: 28.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/js/bootstrap.min.js" for 50.17.182.190 at 2016-08-07 18:28:48 +0000
+Cannot render console from 50.17.182.190! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+ActionController::RoutingError (No route matches [GET] "/js/bootstrap.min.js"):
+  .bundleactionpack (4.2.6) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  .bundleweb-console (2.3.0) lib/web_console/middleware.rb:20:in `block in call'
+  .bundleweb-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  .bundleweb-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  .bundleactionpack (4.2.6) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  .bundlerailties (4.2.6) lib/rails/rack/logger.rb:38:in `call_app'
+  .bundlerailties (4.2.6) lib/rails/rack/logger.rb:20:in `block in call'
+  .bundleactivesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  .bundleactivesupport (4.2.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+  .bundleactivesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `tagged'
+  .bundlerailties (4.2.6) lib/rails/rack/logger.rb:20:in `call'
+  .bundleactionpack (4.2.6) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  .bundlerack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  .bundlerack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  .bundleactivesupport (4.2.6) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  .bundlerack (1.6.4) lib/rack/lock.rb:17:in `call'
+  .bundleactionpack (4.2.6) lib/action_dispatch/middleware/static.rb:120:in `call'
+  .bundlerack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  .bundlerailties (4.2.6) lib/rails/engine.rb:518:in `call'
+  .bundlerailties (4.2.6) lib/rails/application.rb:165:in `call'
+  .bundlerack (1.6.4) lib/rack/lock.rb:17:in `call'
+  .bundlerack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  .bundlerack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /usr/local/opt/rbenv/versions/2.3.1/lib/ruby/2.3.0/webrick/httpserver.rb:140:in `service'
+  /usr/local/opt/rbenv/versions/2.3.1/lib/ruby/2.3.0/webrick/httpserver.rb:96:in `run'
+  /usr/local/opt/rbenv/versions/2.3.1/lib/ruby/2.3.0/webrick/server.rb:296:in `block in start_thread'
+
+
+  Rendered .bundle/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.3ms)
+  Rendered .bundle/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.2ms)
+  Rendered .bundle/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.1ms)
+  Rendered .bundle/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered .bundle/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (43.4ms)
+
+
+Started GET "/sequence" for 50.17.182.190 at 2016-08-07 18:28:49 +0000
+Cannot render console from 50.17.182.190! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+ActionController::RoutingError (No route matches [GET] "/sequence"):
+  .bundleactionpack (4.2.6) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  .bundleweb-console (2.3.0) lib/web_console/middleware.rb:20:in `block in call'
+  .bundleweb-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  .bundleweb-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  .bundleactionpack (4.2.6) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  .bundlerailties (4.2.6) lib/rails/rack/logger.rb:38:in `call_app'
+  .bundlerailties (4.2.6) lib/rails/rack/logger.rb:20:in `block in call'
+  .bundleactivesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  .bundleactivesupport (4.2.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+  .bundleactivesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `tagged'
+  .bundlerailties (4.2.6) lib/rails/rack/logger.rb:20:in `call'
+  .bundleactionpack (4.2.6) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  .bundlerack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  .bundlerack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  .bundleactivesupport (4.2.6) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  .bundlerack (1.6.4) lib/rack/lock.rb:17:in `call'
+  .bundleactionpack (4.2.6) lib/action_dispatch/middleware/static.rb:120:in `call'
+  .bundlerack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  .bundlerailties (4.2.6) lib/rails/engine.rb:518:in `call'
+  .bundlerailties (4.2.6) lib/rails/application.rb:165:in `call'
+  .bundlerack (1.6.4) lib/rack/lock.rb:17:in `call'
+  .bundlerack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  .bundlerack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /usr/local/opt/rbenv/versions/2.3.1/lib/ruby/2.3.0/webrick/httpserver.rb:140:in `service'
+  /usr/local/opt/rbenv/versions/2.3.1/lib/ruby/2.3.0/webrick/httpserver.rb:96:in `run'
+  /usr/local/opt/rbenv/versions/2.3.1/lib/ruby/2.3.0/webrick/server.rb:296:in `block in start_thread'
+
+
+  Rendered .bundle/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.3ms)
+  Rendered .bundle/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.5ms)
+  Rendered .bundle/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.1ms)
+  Rendered .bundle/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered .bundle/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (29.5ms)
+
+
+Started GET "/js/bootstrap.min.js" for 50.17.182.190 at 2016-08-07 18:28:52 +0000
+Cannot render console from 50.17.182.190! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+ActionController::RoutingError (No route matches [GET] "/js/bootstrap.min.js"):
+  .bundleactionpack (4.2.6) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  .bundleweb-console (2.3.0) lib/web_console/middleware.rb:20:in `block in call'
+  .bundleweb-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  .bundleweb-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  .bundleactionpack (4.2.6) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  .bundlerailties (4.2.6) lib/rails/rack/logger.rb:38:in `call_app'
+  .bundlerailties (4.2.6) lib/rails/rack/logger.rb:20:in `block in call'
+  .bundleactivesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  .bundleactivesupport (4.2.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+  .bundleactivesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `tagged'
+  .bundlerailties (4.2.6) lib/rails/rack/logger.rb:20:in `call'
+  .bundleactionpack (4.2.6) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  .bundlerack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  .bundlerack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  .bundleactivesupport (4.2.6) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  .bundlerack (1.6.4) lib/rack/lock.rb:17:in `call'
+  .bundleactionpack (4.2.6) lib/action_dispatch/middleware/static.rb:120:in `call'
+  .bundlerack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  .bundlerailties (4.2.6) lib/rails/engine.rb:518:in `call'
+  .bundlerailties (4.2.6) lib/rails/application.rb:165:in `call'
+  .bundlerack (1.6.4) lib/rack/lock.rb:17:in `call'
+  .bundlerack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  .bundlerack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /usr/local/opt/rbenv/versions/2.3.1/lib/ruby/2.3.0/webrick/httpserver.rb:140:in `service'
+  /usr/local/opt/rbenv/versions/2.3.1/lib/ruby/2.3.0/webrick/httpserver.rb:96:in `run'
+  /usr/local/opt/rbenv/versions/2.3.1/lib/ruby/2.3.0/webrick/server.rb:296:in `block in start_thread'
+
+
+  Rendered .bundle/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.5ms)
+  Rendered .bundle/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.1ms)
+  Rendered .bundle/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.3ms)
+  Rendered .bundle/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered .bundle/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (30.9ms)
+
+
+Started GET "/help" for 50.17.182.190 at 2016-08-07 18:28:53 +0000
+Cannot render console from 50.17.182.190! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by StaticPagesController#help as HTML
+  Rendered static_pages/help.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 31ms (Views: 30.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/js/bootstrap.min.js" for 50.17.182.190 at 2016-08-07 18:28:53 +0000
+Cannot render console from 50.17.182.190! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+ActionController::RoutingError (No route matches [GET] "/js/bootstrap.min.js"):
+  .bundleactionpack (4.2.6) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  .bundleweb-console (2.3.0) lib/web_console/middleware.rb:20:in `block in call'
+  .bundleweb-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  .bundleweb-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  .bundleactionpack (4.2.6) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  .bundlerailties (4.2.6) lib/rails/rack/logger.rb:38:in `call_app'
+  .bundlerailties (4.2.6) lib/rails/rack/logger.rb:20:in `block in call'
+  .bundleactivesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  .bundleactivesupport (4.2.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+  .bundleactivesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `tagged'
+  .bundlerailties (4.2.6) lib/rails/rack/logger.rb:20:in `call'
+  .bundleactionpack (4.2.6) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  .bundlerack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  .bundlerack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  .bundleactivesupport (4.2.6) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  .bundlerack (1.6.4) lib/rack/lock.rb:17:in `call'
+  .bundleactionpack (4.2.6) lib/action_dispatch/middleware/static.rb:120:in `call'
+  .bundlerack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  .bundlerailties (4.2.6) lib/rails/engine.rb:518:in `call'
+  .bundlerailties (4.2.6) lib/rails/application.rb:165:in `call'
+  .bundlerack (1.6.4) lib/rack/lock.rb:17:in `call'
+  .bundlerack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  .bundlerack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /usr/local/opt/rbenv/versions/2.3.1/lib/ruby/2.3.0/webrick/httpserver.rb:140:in `service'
+  /usr/local/opt/rbenv/versions/2.3.1/lib/ruby/2.3.0/webrick/httpserver.rb:96:in `run'
+  /usr/local/opt/rbenv/versions/2.3.1/lib/ruby/2.3.0/webrick/server.rb:296:in `block in start_thread'
+
+
+  Rendered .bundle/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.2ms)
+  Rendered .bundle/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.1ms)
+  Rendered .bundle/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_table.html.erb (14.4ms)
+  Rendered .bundle/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered .bundle/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (42.5ms)
+
+
+Started GET "/" for 50.17.182.190 at 2016-08-07 18:29:48 +0000
+Cannot render console from 50.17.182.190! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by StaticPagesController#home as HTML
+  Rendered static_pages/home.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 39ms (Views: 38.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/js/bootstrap.min.js" for 50.17.182.190 at 2016-08-07 18:29:48 +0000
+Cannot render console from 50.17.182.190! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+ActionController::RoutingError (No route matches [GET] "/js/bootstrap.min.js"):
+  .bundleactionpack (4.2.6) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  .bundleweb-console (2.3.0) lib/web_console/middleware.rb:20:in `block in call'
+  .bundleweb-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  .bundleweb-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  .bundleactionpack (4.2.6) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  .bundlerailties (4.2.6) lib/rails/rack/logger.rb:38:in `call_app'
+  .bundlerailties (4.2.6) lib/rails/rack/logger.rb:20:in `block in call'
+  .bundleactivesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  .bundleactivesupport (4.2.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+  .bundleactivesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `tagged'
+  .bundlerailties (4.2.6) lib/rails/rack/logger.rb:20:in `call'
+  .bundleactionpack (4.2.6) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  .bundlerack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  .bundlerack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  .bundleactivesupport (4.2.6) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  .bundlerack (1.6.4) lib/rack/lock.rb:17:in `call'
+  .bundleactionpack (4.2.6) lib/action_dispatch/middleware/static.rb:120:in `call'
+  .bundlerack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  .bundlerailties (4.2.6) lib/rails/engine.rb:518:in `call'
+  .bundlerailties (4.2.6) lib/rails/application.rb:165:in `call'
+  .bundlerack (1.6.4) lib/rack/lock.rb:17:in `call'
+  .bundlerack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  .bundlerack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /usr/local/opt/rbenv/versions/2.3.1/lib/ruby/2.3.0/webrick/httpserver.rb:140:in `service'
+  /usr/local/opt/rbenv/versions/2.3.1/lib/ruby/2.3.0/webrick/httpserver.rb:96:in `run'
+  /usr/local/opt/rbenv/versions/2.3.1/lib/ruby/2.3.0/webrick/server.rb:296:in `block in start_thread'
+
+
+  Rendered .bundle/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.4ms)
+  Rendered .bundle/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.0ms)
+  Rendered .bundle/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.0ms)
+  Rendered .bundle/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered .bundle/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (30.3ms)
+
+
+Started GET "/js/bootstrap.min.js" for 50.17.182.190 at 2016-08-07 18:30:00 +0000
+Cannot render console from 50.17.182.190! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+ActionController::RoutingError (No route matches [GET] "/js/bootstrap.min.js"):
+  .bundleactionpack (4.2.6) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  .bundleweb-console (2.3.0) lib/web_console/middleware.rb:20:in `block in call'
+  .bundleweb-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  .bundleweb-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  .bundleactionpack (4.2.6) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  .bundlerailties (4.2.6) lib/rails/rack/logger.rb:38:in `call_app'
+  .bundlerailties (4.2.6) lib/rails/rack/logger.rb:20:in `block in call'
+  .bundleactivesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  .bundleactivesupport (4.2.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+  .bundleactivesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `tagged'
+  .bundlerailties (4.2.6) lib/rails/rack/logger.rb:20:in `call'
+  .bundleactionpack (4.2.6) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  .bundlerack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  .bundlerack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  .bundleactivesupport (4.2.6) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  .bundlerack (1.6.4) lib/rack/lock.rb:17:in `call'
+  .bundleactionpack (4.2.6) lib/action_dispatch/middleware/static.rb:120:in `call'
+  .bundlerack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  .bundlerailties (4.2.6) lib/rails/engine.rb:518:in `call'
+  .bundlerailties (4.2.6) lib/rails/application.rb:165:in `call'
+  .bundlerack (1.6.4) lib/rack/lock.rb:17:in `call'
+  .bundlerack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  .bundlerack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /usr/local/opt/rbenv/versions/2.3.1/lib/ruby/2.3.0/webrick/httpserver.rb:140:in `service'
+  /usr/local/opt/rbenv/versions/2.3.1/lib/ruby/2.3.0/webrick/httpserver.rb:96:in `run'
+  /usr/local/opt/rbenv/versions/2.3.1/lib/ruby/2.3.0/webrick/server.rb:296:in `block in start_thread'
+
+
+  Rendered .bundle/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.2ms)
+  Rendered .bundle/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.0ms)
+  Rendered .bundle/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.0ms)
+  Rendered .bundle/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered .bundle/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (28.5ms)
+
+
+Started GET "/js/bootstrap.min.js" for 50.17.182.190 at 2016-08-07 18:30:01 +0000
+Cannot render console from 50.17.182.190! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+ActionController::RoutingError (No route matches [GET] "/js/bootstrap.min.js"):
+  .bundleactionpack (4.2.6) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  .bundleweb-console (2.3.0) lib/web_console/middleware.rb:20:in `block in call'
+  .bundleweb-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  .bundleweb-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  .bundleactionpack (4.2.6) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  .bundlerailties (4.2.6) lib/rails/rack/logger.rb:38:in `call_app'
+  .bundlerailties (4.2.6) lib/rails/rack/logger.rb:20:in `block in call'
+  .bundleactivesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  .bundleactivesupport (4.2.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+  .bundleactivesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `tagged'
+  .bundlerailties (4.2.6) lib/rails/rack/logger.rb:20:in `call'
+  .bundleactionpack (4.2.6) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  .bundlerack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  .bundlerack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  .bundleactivesupport (4.2.6) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  .bundlerack (1.6.4) lib/rack/lock.rb:17:in `call'
+  .bundleactionpack (4.2.6) lib/action_dispatch/middleware/static.rb:120:in `call'
+  .bundlerack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  .bundlerailties (4.2.6) lib/rails/engine.rb:518:in `call'
+  .bundlerailties (4.2.6) lib/rails/application.rb:165:in `call'
+  .bundlerack (1.6.4) lib/rack/lock.rb:17:in `call'
+  .bundlerack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  .bundlerack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /usr/local/opt/rbenv/versions/2.3.1/lib/ruby/2.3.0/webrick/httpserver.rb:140:in `service'
+  /usr/local/opt/rbenv/versions/2.3.1/lib/ruby/2.3.0/webrick/httpserver.rb:96:in `run'
+  /usr/local/opt/rbenv/versions/2.3.1/lib/ruby/2.3.0/webrick/server.rb:296:in `block in start_thread'
+
+
+  Rendered .bundle/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.4ms)
+  Rendered .bundle/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.2ms)
+  Rendered .bundle/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.2ms)
+  Rendered .bundle/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered .bundle/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (30.4ms)
+  [1m[36m (12.7ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL) [0m
+  [1m[35m (4.7ms)[0m  CREATE UNIQUE INDEX  "unique_schema_migrations" ON "schema_migrations"  ("version")
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateUsers (20140929191900)
+  [1m[35m (0.1ms)[0m  BEGIN
+DEPRECATION WARNING: `#timestamps` was called without specifying an option for `null`. In Rails 5, this behavior will change to `null: false`. You should manually specify `null: true` to prevent the behavior of your existing migrations from changing. (called from block in change at /home/nitrous/code/Ruumi-Version2/db/migrate/20140929191900_create_users.rb:7)
+  [1m[36m (8.2ms)[0m  [1mCREATE TABLE "users" ("id" serial primary key, "name" character varying, "email" character varying, "created_at" timestamp, "updated_at" timestamp) [0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20140929191900"]]
+  [1m[36m (3.1ms)[0m  [1mCOMMIT[0m
+Migrating to ChangeNames (20150501001725)
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mALTER TABLE "users" RENAME COLUMN "name" TO "full"[0m
+  [1m[35m (0.1ms)[0m  ALTER TABLE "users" RENAME COLUMN "email" TO "dna"
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ($1)[0m  [["version", "20150501001725"]]
+  [1m[35m (1.2ms)[0m  COMMIT
+Migrating to AddMrnaColumnToUsers (20150501003248)
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (1.1ms)[0m  ALTER TABLE "users" ADD "mrna" character varying
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ($1)[0m  [["version", "20150501003248"]]
+  [1m[35m (0.9ms)[0m  COMMIT
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (2.0ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'users'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+

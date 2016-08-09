@@ -13,19 +13,15 @@
 
 ActiveRecord::Schema.define(version: 20150501003248) do
 
-  create_table "microposts", force: true do |t|
-    t.string   "content"
-    t.integer  "user_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
 
-  create_table "users", force: true do |t|
+  create_table "users", force: :cascade do |t|
     t.string   "full"
     t.string   "dna"
-    t.string   "mrna"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "mrna"
   end
 
 end
